@@ -8,18 +8,6 @@
       - "@Development tools"
       - https://centos7.iuscommunity.org/ius-release.rpm
 
-  - name: Install Pip for Python 2
-    yum: name=python-pip
-
-  - name: Install Python2 virtualenv
-    pip: name=virtualenv executable=pip2.7
-
-  - name: Python2 Development VirtualEnv
-    pip: name={{ item }} virtualenv=/home/vagrant/venvs/python2 virtualenv_python=python2.7
-    with_items:
-       - mock
-       - pytest
-
   - name: Install Python 3
     yum: name={{ item }}
     with_items:
