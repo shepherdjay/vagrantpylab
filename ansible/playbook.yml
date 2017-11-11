@@ -8,20 +8,19 @@
       - "@Development tools"
       - https://centos7.iuscommunity.org/ius-release.rpm
 
-  - name: Install Python 3
+  - name: Install Python 3.6
     yum: name={{ item }}
     with_items:
       - https://centos7.iuscommunity.org/ius-release.rpm
-      - python35u
-      - python35u-devel
-      - python35u-pip
+      - python36u
+      - python36u-devel
+      - python36u-pip
 
-  - name: Install Python3 virtualenv
-    pip: name=virtualenv executable=pip3.5
+  - name: Install Python3.6 virtualenv
+    pip: name=virtualenv executable=pip3.6
 
-  - name: Python3 Development VirtualEnv
-    pip: name={{ item }} virtualenv=/home/vagrant/venvs/python3 virtualenv_python=python3.5
+  - name: Python3.6 Development VirtualEnv
+    pip: name={{ item }} virtualenv=/home/vagrant/venvs/python3 virtualenv_python=python3.6
     with_items:
-       - mock
-       - pytest
-
+      - mock
+      - pytest
